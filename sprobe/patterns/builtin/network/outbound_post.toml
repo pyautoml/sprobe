@@ -1,0 +1,22 @@
+id = "outbound_post_request"
+category = "network"
+severity = "medium"
+description = "Package makes outbound HTTP POST requests, common for data exfiltration"
+tags = ["exfiltration", "http"]
+expected_for = ["requests", "httpx", "urllib3", "aiohttp", "sentry-sdk"]
+
+[detection]
+type = "regex"
+target = "source"
+
+[[detection.rules]]
+pattern = 'requests\.post\('
+
+[[detection.rules]]
+pattern = 'httpx\.post\('
+
+[[detection.rules]]
+pattern = 'urllib\.request\.urlopen\('
+
+[[detection.rules]]
+pattern = 'http\.client\.HTTPSConnection'

@@ -1,0 +1,25 @@
+id = "subprocess_spawn"
+category = "code_execution"
+severity = "medium"
+description = "Package spawns subprocesses, can execute arbitrary system commands"
+tags = ["code_execution", "system_access"]
+expected_for = ["subprocess32", "sh", "plumbum", "invoke", "fabric"]
+
+[detection]
+type = "regex"
+target = "source"
+
+[[detection.rules]]
+pattern = 'subprocess\.(call|run|Popen|check_output|check_call)\('
+
+[[detection.rules]]
+pattern = 'os\.system\('
+
+[[detection.rules]]
+pattern = 'os\.popen\('
+
+[[detection.rules]]
+pattern = 'os\.exec'
+
+[[detection.rules]]
+pattern = 'commands\.getoutput\('

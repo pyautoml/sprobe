@@ -1,0 +1,19 @@
+id = "ctypes_usage"
+category = "code_execution"
+severity = "medium"
+description = "Package uses ctypes to call native code, can bypass Python sandboxing"
+tags = ["code_execution", "native_code"]
+expected_for = ["cffi", "pyaudio", "pynput", "pyperclip", "comtypes"]
+
+[detection]
+type = "regex"
+target = "source"
+
+[[detection.rules]]
+pattern = 'ctypes\.(cdll|windll|CDLL|WinDLL)'
+
+[[detection.rules]]
+pattern = 'ctypes\.CFUNCTYPE'
+
+[[detection.rules]]
+pattern = 'ctypes\.cast\('

@@ -1,0 +1,25 @@
+id = "ssh_key_read"
+category = "file_access"
+severity = "critical"
+description = "Package attempts to read SSH private keys"
+tags = ["credential_theft", "ssh"]
+expected_for = ["paramiko", "fabric", "asyncssh", "ssh2-python"]
+
+[detection]
+type = "regex"
+target = "source"
+
+[[detection.rules]]
+pattern = '\.ssh/id_rsa'
+
+[[detection.rules]]
+pattern = '\.ssh/id_ed25519'
+
+[[detection.rules]]
+pattern = '\.ssh/id_ecdsa'
+
+[[detection.rules]]
+pattern = '\.ssh/id_dsa'
+
+[[detection.rules]]
+pattern = 'open\(.*\.ssh/config'

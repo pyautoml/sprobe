@@ -1,0 +1,19 @@
+id = "env_file_read"
+category = "file_access"
+severity = "high"
+description = "Package reads .env files which commonly contain secrets"
+tags = ["credential_theft", "environment"]
+expected_for = ["python-dotenv", "environs", "django-environ", "pydantic-settings", "flask", "django", "fastapi", "celery", "uvicorn", "gunicorn", "starlette", "sanic", "tornado"]
+
+[detection]
+type = "regex"
+target = "source"
+
+[[detection.rules]]
+pattern = 'open\(.*\.env'
+
+[[detection.rules]]
+pattern = 'read_dotenv'
+
+[[detection.rules]]
+pattern = 'dotenv_values'

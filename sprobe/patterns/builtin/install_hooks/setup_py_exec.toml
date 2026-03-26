@@ -1,0 +1,29 @@
+id = "setup_py_exec"
+category = "install_hooks"
+severity = "critical"
+description = "Build/install entrypoint contains executable code beyond standard declarations"
+tags = ["install_time", "code_execution"]
+expected_for = []
+
+[detection]
+type = "regex"
+target = "source"
+file_scope = ["setup.py"]
+
+[[detection.rules]]
+pattern = 'subprocess'
+
+[[detection.rules]]
+pattern = 'os\.system\('
+
+[[detection.rules]]
+pattern = 'urllib'
+
+[[detection.rules]]
+pattern = 'requests\.'
+
+[[detection.rules]]
+pattern = 'socket\.'
+
+[[detection.rules]]
+pattern = '__import__\('

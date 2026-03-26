@@ -1,0 +1,44 @@
+PyAutoML Non-Commercial License v1.0
+
+Copyright (c) 2026 PyAutoML
+https://github.com/pyautoml
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and redistribute the Software for personal, educational, or
+non-commercial purposes, subject to the following conditions:
+
+1. ATTRIBUTION
+   All copies, modifications, or derivative works must retain this license
+   notice in its entirety and clearly attribute the original author:
+   https://github.com/pyautoml
+
+2. NO BUSINESS USE
+   The Software may not be used, downloaded, clones, copied, modified, or deployed by any
+   business, company, enterprise, or other commercial entity, regardless
+   of whether the use generates revenue or direct or indirect financial benefit.
+   This includes, but is not limited to: running the Software on company
+   infrastructure, incorporating it into internal tools, using it for
+   employee training, or evaluating it for potential adoption.
+
+3. BUSINESS LICENSING
+   Any use by a business entity requires prior written permission from
+   the author. Contact: https://github.com/pyautoml
+
+4. NO SECURITY GUARANTEE
+   The Software is a research and assistance tool, not a certified security
+   product. It does not guarantee detection of all malicious, vulnerable, or
+   unwanted code. A "SAFE" verdict does not constitute a security certification
+   or assurance of any kind. The user is solely responsible for all decisions
+   made based on the Software's output, including but not limited to the
+   decision to install, execute, or deploy any analyzed package. The authors
+   accept no liability for damages resulting from undetected threats, false
+   negatives, false positives, or any other output of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

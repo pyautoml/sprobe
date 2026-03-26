@@ -1,0 +1,20 @@
+id = "base64_exec"
+category = "obfuscation"
+severity = "critical"
+description = "Package decodes base64 content and executes it, classic malware pattern"
+tags = ["obfuscation", "code_execution"]
+expected_for = []
+
+[detection]
+type = "ast"
+target = "source"
+
+[[detection.rules]]
+description = "base64.b64decode combined with exec or eval"
+call_chains = ["base64.b64decode"]
+combined_with = ["exec", "eval", "compile"]
+
+[[detection.rules]]
+description = "Raw base64 decode plus exec pattern"
+call_chains = ["b64decode"]
+combined_with = ["exec", "eval"]

@@ -1,0 +1,25 @@
+id = "eval_dynamic_code"
+category = "obfuscation"
+severity = "high"
+description = "Package uses eval/exec/compile with dynamic input"
+tags = ["obfuscation", "code_execution"]
+expected_for = []
+
+[detection]
+type = "ast"
+target = "source"
+
+[[detection.rules]]
+description = "eval() with non-literal argument"
+function_names = ["eval"]
+require_dynamic_args = true
+
+[[detection.rules]]
+description = "exec() with non-literal argument"
+function_names = ["exec"]
+require_dynamic_args = true
+
+[[detection.rules]]
+description = "compile() with non-literal argument"
+function_names = ["compile"]
+require_dynamic_args = true

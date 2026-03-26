@@ -1,0 +1,16 @@
+id = "dns_exfiltration"
+category = "network"
+severity = "high"
+description = "Package performs raw DNS lookups, potential data exfiltration via DNS"
+tags = ["exfiltration", "dns"]
+expected_for = ["dnspython", "twisted", "aiodns", "django", "flask", "tornado", "aiohttp", "httpx", "requests", "urllib3", "gevent", "eventlet"]
+
+[detection]
+type = "regex"
+target = "source"
+
+[[detection.rules]]
+pattern = 'dns\.resolver'
+
+[[detection.rules]]
+pattern = 'dnslib'
